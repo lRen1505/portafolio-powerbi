@@ -1,324 +1,207 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio | Business Intelligence</title>
+  <meta name="description" content="Portafolio de Business Intelligence: proyectos y dashboards interactivos desarrollados en Power BI.">
+  <title>BI Portfolio | Power BI & Data Analytics</title>
   <style>
-    :root {
-      --bg: #081525;
-      --card: #11243a;
-      --accent: #38d9c1;
-      --text: #f5f8ff;
-      --muted: #a5b5c7;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 8%;
-      border-bottom: 1px solid #263c53;
-    }
-
-    .logo {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 24px;
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      margin-left: 24px;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    section { padding: 65px 8%; }
-
-    .hero { padding: 105px 8%; }
-
-    .hero h1 {
-      font-size: clamp(34px, 5vw, 60px);
-      max-width: 850px;
-      margin: 0 0 24px;
-    }
-
-    .hero span { color: var(--accent); }
-
-    p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .hero p { max-width: 650px; }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      margin-top: 18px;
-      border-radius: 9px;
-      background: var(--accent);
-      color: #081525;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    h2 { font-size: 32px; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid #27405a;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform .25s;
-    }
-
-    .card:hover { transform: translateY(-6px); }
-
-    .preview {
-      background: #183854;
-      padding: 45px 20px;
-      text-align: center;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 22px;
-    }
-
-    .card-content { padding: 25px; }
-
-    .card h3 { margin-top: 0; }
-
-    .tag {
-      display: inline-block;
-      padding: 7px 12px;
-      background: #1c4153;
-      color: var(--accent);
-      border-radius: 7px;
-      margin: 5px 5px 5px 0;
-      font-size: 13px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #263c53;
-      color: var(--muted);
-    }
-
-    @media (max-width: 650px) {
-      header { flex-direction: column; gap: 18px; }
-      nav a { margin: 0 9px; }
-      section { padding: 45px 6%; }
-      .hero { padding: 75px 6%; }
-    }
-    
-/* Contenedor adaptable para dashboards Power BI */
-.dashboard-container {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #ffffff;
-  margin-top: 20px;
-}
-
-.dashboard-container iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-@media (max-width: 768px) {
-  .dashboard-container {
-    aspect-ratio: 4 / 5;
-    min-height: 450px;
-  }
-}
-
+    :root{--bg:#081525;--card:#11243a;--accent:#38d9c1;--text:#f5f8ff;--muted:#a5b5c7;--line:#27405a}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:inherit}
+    header{display:flex;justify-content:space-between;align-items:center;padding:24px 8%;border-bottom:1px solid #263c53;gap:18px}
+    .logo{color:var(--accent);font-weight:800;font-size:23px;letter-spacing:.3px}
+    nav{display:flex;flex-wrap:wrap;gap:20px}
+    nav a{text-decoration:none;font-size:14px;font-weight:600}
+    nav a:hover,nav a:focus-visible{color:var(--accent)}
+    section{padding:65px 8%;scroll-margin-top:16px}
+    .hero{padding:100px 8% 85px;background:radial-gradient(ellipse at 85% 25%,#123753 0%,transparent 45%)}
+    .eyebrow{color:var(--accent);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:2px}
+    .hero h1{font-size:clamp(36px,5vw,64px);max-width:880px;line-height:1.13;margin:16px 0 22px}
+    .hero h1 span{color:var(--accent)}
+    p{color:var(--muted);line-height:1.75}
+    .hero p{max-width:680px;font-size:17px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;border:1px solid transparent;background:var(--accent);color:#081525;text-decoration:none;font-weight:800;font-size:14px;cursor:pointer}
+    .btn:hover{filter:brightness(1.08)}
+    .btn-secondary{background:transparent;color:var(--text);border-color:#3c6379}
+    h2{font-size:clamp(26px,3vw,36px);margin:0 0 12px}
+    .intro{max-width:750px;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:32px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}
+    .card:hover{transform:translateY(-4px);border-color:#45a4a9}
+    .project-preview{height:190px;position:relative;padding:20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+    .preview-ram{background:linear-gradient(135deg,#123a61,#1a7793)}
+    .preview-creatina{background:linear-gradient(135deg,#1b4061,#487f92)}
+    .preview-kallpa{background:linear-gradient(135deg,#174e53,#339c77)}
+    .preview-label{font-size:12px;color:#e7f7f9;font-weight:800;text-transform:uppercase;letter-spacing:1.4px;position:relative;z-index:1}
+    .mini-charts{display:flex;align-items:end;gap:10px;height:95px;position:relative;z-index:1}
+    .mini-charts span{display:block;width:17%;height:var(--h);background:rgba(255,255,255,.75);border-radius:7px 7px 2px 2px}
+    .preview-orb{position:absolute;right:-20px;top:-65px;border:35px solid rgba(255,255,255,.08);border-radius:50%;width:240px;height:240px}
+    .card-content{padding:23px}
+    .card h3{font-size:20px;margin:0 0 10px}
+    .card p{font-size:14px;min-height:95px;margin:0 0 16px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
+    .tag{display:inline-block;padding:7px 10px;background:#1c4153;color:var(--accent);border-radius:7px;font-size:12px}
+    .card .btn{width:100%}
+    .viewer{margin-top:35px;border-radius:18px;overflow:hidden;border:1px solid #367287;background:var(--card)}
+    .viewer[hidden]{display:none}
+    .viewer-head{display:flex;gap:15px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:20px 23px;border-bottom:1px solid var(--line)}
+    .viewer-head h3{margin:0;font-size:20px}
+    .viewer-actions{display:flex;flex-wrap:wrap;gap:10px}
+    .viewer-frame{width:100%;aspect-ratio:16/9;background:white}
+    .viewer-frame iframe{display:block;width:100%;height:100%;border:0}
+    .viewer-note{font-size:12px;margin:0;padding:0 23px 20px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+    .contact{border-top:1px solid var(--line)}
+    footer{text-align:center;padding:28px 18px;border-top:1px solid #263c53;color:var(--muted);font-size:13px}
+    :focus-visible{outline:3px solid #ffe59a;outline-offset:3px}
+    @media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:650px){header{padding:20px 6%;flex-direction:column}nav{justify-content:center;gap:14px}section{padding:52px 6%}.hero{padding:70px 6%}.grid{grid-template-columns:1fr}.card p{min-height:0}.project-preview{height:170px}.viewer-head{align-items:flex-start}.viewer-actions{width:100%}.viewer-actions .btn{flex:1}.viewer-frame{aspect-ratio:4/5;min-height:440px}}
   </style>
 </head>
 <body>
-
 <header>
   <div class="logo">BI Portfolio</div>
-  <nav>
+  <nav aria-label="Navegación principal">
     <a href="#inicio">Inicio</a>
     <a href="#proyectos">Proyectos</a>
     <a href="#habilidades">Habilidades</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
-
 <main>
   <section class="hero" id="inicio">
-    <h1>
-      Transformando datos en
-      <span>decisiones inteligentes.</span>
-    </h1>
-    <p>
-      Portafolio de Business Intelligence y Data Analytics.
-      Proyectos desarrollados con Power BI, Power Query,
-      DAX, SQL y herramientas de análisis de datos.
-    </p>
-    <a class="btn" href="#proyectos">Explorar proyectos</a>
+    <div class="eyebrow">Business Intelligence & Data Analytics</div>
+    <h1>Transformando datos en <span>decisiones inteligentes.</span></h1>
+    <p>Explora mis proyectos y dashboards interactivos desarrollados con Power BI y herramientas de análisis de datos.</p>
+    <a class="btn" href="#proyectos">Explorar proyectos &darr;</a>
   </section>
 
+  <section id="proyectos">
+    <h2>Mis proyectos de Power BI</h2>
+    <p class="intro">Selecciona un proyecto para explorar su dashboard interactivo directamente desde esta página. Todos los informes se abren en un único visor.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="project-preview preview-ram" aria-hidden="true">
+          <div class="preview-orb"></div><div class="preview-label">Proyecto 01 · Memorias RAM</div>
+          <div class="mini-charts"><span style="--h:50%"></span><span style="--h:80%"></span><span style="--h:65%"></span><span style="--h:93%"></span><span style="--h:70%"></span></div>
+        </div>
+        <div class="card-content">
+          <h3>Análisis de Memorias RAM</h3>
+          <p>Exploración de registros de memorias RAM a través de gráficos, aduanas y países de origen.</p>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Análisis de datos</span></div>
+          <button type="button" class="btn" data-project="ram">Ver dashboard interactivo</button>
+        </div>
+      </article>
 
+      <article class="card">
+        <div class="project-preview preview-creatina" aria-hidden="true">
+          <div class="preview-orb"></div><div class="preview-label">Proyecto 02 · Creatina</div>
+          <div class="mini-charts"><span style="--h:70%"></span><span style="--h:42%"></span><span style="--h:88%"></span><span style="--h:67%"></span><span style="--h:96%"></span></div>
+        </div>
+        <div class="card-content">
+          <h3>Análisis de Creatina</h3>
+          <p>Visualización de información relacionada con productos de creatina mediante un dashboard interactivo.</p>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Visualización</span></div>
+          <button type="button" class="btn" data-project="creatina">Ver dashboard interactivo</button>
+        </div>
+      </article>
 
-<section id="proyectos">
-  <h2>Mis proyectos de Power BI</h2>
-  <p>
-    Explora mis proyectos de Business Intelligence.
-    Cada dashboard permite interactuar con los datos,
-    visualizar indicadores y analizar información.
-  </p>
-
-  <!-- PROYECTO 1: MEMORIAS RAM -->
-  <div class="card" style="margin-top:35px;">
-    <div class="card-content">
-
-      <h3>01. Análisis de Memorias RAM</h3>
-
-      <p>
-        Dashboard de análisis de productos de memoria RAM.
-        Presenta visualizaciones por aduana y país de origen,
-        permitiendo explorar la distribución de los registros.
-      </p>
-
-      <div class="dashboard-container">
-        <iframe
-          title="MEMORIAS_RAM_DASHBOARD"
-          src="https://app.powerbi.com/view?r=eyJrIjoiOWMyODI4MTMtNmQ1My00MTViLWI3NzQtZWY0MzYyYWMzNWM2IiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div style="margin-top:20px;">
-        <span class="tag">Power BI</span>
-        <span class="tag">Análisis de datos</span>
-        <span class="tag">Dashboard interactivo</span>
-      </div>
-
+      <article class="card">
+        <div class="project-preview preview-kallpa" aria-hidden="true">
+          <div class="preview-orb"></div><div class="preview-label">Proyecto 03 · Kallpa Express</div>
+          <div class="mini-charts"><span style="--h:82%"></span><span style="--h:57%"></span><span style="--h:74%"></span><span style="--h:96%"></span><span style="--h:61%"></span></div>
+        </div>
+        <div class="card-content">
+          <h3>Kallpa Express | BI</h3>
+          <p>Dashboard del proyecto Kallpa Express para presentar resultados y explorar información de manera visual.</p>
+          <div class="tags"><span class="tag">Power BI</span><span class="tag">Business Intelligence</span></div>
+          <button type="button" class="btn" data-project="kallpa">Ver dashboard interactivo</button>
+        </div>
+      </article>
     </div>
-  </div>
 
-  <!-- PROYECTO 2: CREATINA -->
-  <div class="card" style="margin-top:35px;">
-    <div class="card-content">
-
-      <h3>02. Análisis de Creatina</h3>
-
-      <p>
-        Dashboard interactivo desarrollado en Power BI
-        para explorar y visualizar información
-        relacionada con productos de creatina.
-      </p>
-
-      <div class="dashboard-container">
-        <iframe
-          title="Creatina_POWERBI_2"
-          src="https://app.powerbi.com/view?r=eyJrIjoiMGI5MDI5YTEtYjc5Ny00NGQwLWIzNmYtNmEwYzM4MDljMmE4IiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
+    <div class="viewer" id="visor" hidden>
+      <div class="viewer-head">
+        <h3 id="visor-titulo">Dashboard interactivo</h3>
+        <div class="viewer-actions">
+          <a class="btn btn-secondary" id="visor-externo" href="#" target="_blank" rel="noopener noreferrer">Abrir en nueva pestaña ↗</a>
+          <button type="button" class="btn btn-secondary" id="visor-cerrar">Cerrar ✕</button>
+        </div>
       </div>
-
-      <div style="margin-top:20px;">
-        <span class="tag">Power BI</span>
-        <span class="tag">Visualización de datos</span>
-        <span class="tag">Dashboard interactivo</span>
+      <div class="viewer-frame">
+        <iframe id="visor-iframe" title="Dashboard interactivo de Power BI" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
-
+      <p class="viewer-note">El informe es público. Para mayor comodidad en pantallas pequeñas, puedes abrirlo en una pestaña nueva.</p>
     </div>
-  </div>
-
-  <!-- PROYECTO 3: KALLPA EXPRESS -->
-  <div class="card" style="margin-top:35px;">
-    <div class="card-content">
-
-      <h3>03. Kallpa Express | Business Intelligence</h3>
-
-      <p>
-        Dashboard interactivo correspondiente al proyecto
-        Kallpa Express, orientado a presentar información
-        mediante visualizaciones y herramientas de análisis.
-      </p>
-
-      <div class="dashboard-container">
-        <iframe
-          title="KALLPAEXPRESS"
-          src="https://app.powerbi.com/view?r=eyJrIjoiMzgzMjZiNGYtMWE4Yy00YzZhLThkOGQtMDJhY2M0MGIwOTgyIiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9"
-          loading="lazy"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div style="margin-top:20px;">
-        <span class="tag">Power BI</span>
-        <span class="tag">Business Intelligence</span>
-        <span class="tag">Dashboard interactivo</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
+  </section>
 
   <section id="habilidades">
     <h2>Herramientas y habilidades</h2>
-    <div>
-      <span class="tag">Power BI</span>
-      <span class="tag">Power Query</span>
-      <span class="tag">DAX</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Python</span>
-      <span class="tag">Excel</span>
-      <span class="tag">Modelado de Datos</span>
+    <p>Herramientas utilizadas en el desarrollo de proyectos de análisis y visualización de datos.</p>
+    <div class="skills">
+      <span class="tag">Power BI</span><span class="tag">Power Query</span><span class="tag">DAX</span>
+      <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel</span><span class="tag">Modelado de Datos</span>
     </div>
   </section>
-
-  <section id="contacto">
+  <section id="contacto" class="contacto">
     <h2>Contacto</h2>
-    <p>
-      Explora mis proyectos y repositorios en GitHub.
-    </p>
-    <a class="btn"
-       href="https://github.com/lren1505"
-       target="_blank"
-       rel="noopener noreferrer">
-       Ver GitHub
-    </a>
+    <p>Consulta mis repositorios y proyectos en GitHub.</p>
+    <a class="btn" href="https://github.com/lren1505" target="_blank" rel="noopener noreferrer">Ver GitHub ↗</a>
   </section>
 </main>
+<footer>Portafolio de Business Intelligence | Power BI</footer>
+<script>
+  // Enlaces públicos aportados para este portafolio.
+  const proyectos = {
+    ram: {
+      titulo: '01. Análisis de Memorias RAM',
+      url: 'https://app.powerbi.com/view?r=eyJrIjoiOWMyODI4MTMtNmQ1My00MTViLWI3NzQtZWY0MzYyYWMzNWM2IiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9'
+    },
+    creatina: {
+      titulo: '02. Análisis de Creatina',
+      url: 'https://app.powerbi.com/view?r=eyJrIjoiMGI5MDI5YTEtYjc5Ny00NGQwLWIzNmYtNmEwYzM4MDljMmE4IiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9'
+    },
+    kallpa: {
+      titulo: '03. Kallpa Express | Business Intelligence',
+      url: 'https://app.powerbi.com/view?r=eyJrIjoiMzgzMjZiNGYtMWE4Yy00YzZhLThkOGQtMDJhY2M0MGIwOTgyIiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9'
+    }
+  };
 
-<footer>
-  Portafolio de Business Intelligence | Power BI
-</footer>
+  const visor = document.getElementById('visor');
+  const marco = document.getElementById('visor-iframe');
+  const titulo = document.getElementById('visor-titulo');
+  const externo = document.getElementById('visor-externo');
+  const cerrar = document.getElementById('visor-cerrar');
+  let ultimoBoton = null;
 
+  document.querySelectorAll('[data-project]').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const proyecto = proyectos[boton.dataset.project];
+      if (!proyecto) return;
+      ultimoBoton = boton;
+      titulo.textContent = proyecto.titulo;
+      marco.title = proyecto.titulo;
+      marco.src = proyecto.url;
+      externo.href = proyecto.url;
+      visor.hidden = false;
+      visor.scrollIntoView({behavior:'smooth', block:'start'});
+      cerrar.focus({preventScroll:true});
+    });
+  });
+
+  function cerrarVisor() {
+    if (visor.hidden) return;
+    visor.hidden = true;
+    marco.removeAttribute('src'); // Detiene la carga del informe al cerrar.
+    if (ultimoBoton) ultimoBoton.focus({preventScroll:true});
+  }
+  cerrar.addEventListener('click', cerrarVisor);
+  document.addEventListener('keydown', evento => {
+    if (evento.key === 'Escape') cerrarVisor();
+  });
+</script>
 </body>
 </html>
