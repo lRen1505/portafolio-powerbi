@@ -132,6 +132,32 @@
       section { padding: 45px 6%; }
       .hero { padding: 75px 6%; }
     }
+    
+/* Contenedor adaptable para dashboards Power BI */
+.dashboard-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+  margin-top: 20px;
+}
+
+.dashboard-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    aspect-ratio: 4 / 5;
+    min-height: 450px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -161,58 +187,106 @@
   </section>
 
 
+
 <section id="proyectos">
   <h2>Mis proyectos de Power BI</h2>
   <p>
-    Dashboards y soluciones analíticas que convierten
-    información en indicadores para la toma de decisiones.
+    Explora mis proyectos de Business Intelligence.
+    Cada dashboard permite interactuar con los datos,
+    visualizar indicadores y analizar información.
   </p>
 
-  <div class="card" style="margin-top: 35px;">
+  <!-- PROYECTO 1: MEMORIAS RAM -->
+  <div class="card" style="margin-top:35px;">
     <div class="card-content">
 
-      <h3>Dashboard de Análisis de Memoria RAM</h3>
+      <h3>01. Análisis de Memorias RAM</h3>
 
       <p>
-        Visualización interactiva de indicadores
-        relacionados con el análisis de memoria RAM.
-        Explora los datos mediante los gráficos
-        y filtros disponibles.
+        Dashboard de análisis de productos de memoria RAM.
+        Presenta visualizaciones por aduana y país de origen,
+        permitiendo explorar la distribución de los registros.
       </p>
 
-      <div style="
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%;
-        overflow: hidden;
-        border-radius: 12px;
-      ">
-
+      <div class="dashboard-container">
         <iframe
           title="MEMORIAS_RAM_DASHBOARD"
           src="https://app.powerbi.com/view?r=eyJrIjoiOWMyODI4MTMtNmQ1My00MTViLWI3NzQtZWY0MzYyYWMzNWM2IiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9"
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-          "
+          loading="lazy"
           allowfullscreen>
         </iframe>
-
       </div>
 
-      <div style="margin-top: 20px;">
+      <div style="margin-top:20px;">
         <span class="tag">Power BI</span>
-        <span class="tag">Dashboard interactivo</span>
         <span class="tag">Análisis de datos</span>
+        <span class="tag">Dashboard interactivo</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROYECTO 2: CREATINA -->
+  <div class="card" style="margin-top:35px;">
+    <div class="card-content">
+
+      <h3>02. Análisis de Creatina</h3>
+
+      <p>
+        Dashboard interactivo desarrollado en Power BI
+        para explorar y visualizar información
+        relacionada con productos de creatina.
+      </p>
+
+      <div class="dashboard-container">
+        <iframe
+          title="Creatina_POWERBI_2"
+          src="https://app.powerbi.com/view?r=eyJrIjoiMGI5MDI5YTEtYjc5Ny00NGQwLWIzNmYtNmEwYzM4MDljMmE4IiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div style="margin-top:20px;">
+        <span class="tag">Power BI</span>
+        <span class="tag">Visualización de datos</span>
+        <span class="tag">Dashboard interactivo</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROYECTO 3: KALLPA EXPRESS -->
+  <div class="card" style="margin-top:35px;">
+    <div class="card-content">
+
+      <h3>03. Kallpa Express | Business Intelligence</h3>
+
+      <p>
+        Dashboard interactivo correspondiente al proyecto
+        Kallpa Express, orientado a presentar información
+        mediante visualizaciones y herramientas de análisis.
+      </p>
+
+      <div class="dashboard-container">
+        <iframe
+          title="KALLPAEXPRESS"
+          src="https://app.powerbi.com/view?r=eyJrIjoiMzgzMjZiNGYtMWE4Yy00YzZhLThkOGQtMDJhY2M0MGIwOTgyIiwidCI6IjMyMDliNTBiLWI3OWItNDNkYy05ZmM0LThkNDJjNDA2ZGQ2MSIsImMiOjR9"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div style="margin-top:20px;">
+        <span class="tag">Power BI</span>
+        <span class="tag">Business Intelligence</span>
+        <span class="tag">Dashboard interactivo</span>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
   <section id="habilidades">
